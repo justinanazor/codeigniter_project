@@ -24,9 +24,10 @@ $route['stud'] = 'studentscontroller/index';
 $route['employees'] = 'frontend/employeecontroller/index';
 $route['employees/add'] = 'frontend/employeecontroller/create';
 $route['employees/store'] = 'frontend/employeecontroller/store_info';
+$route['employees/view/(:any)']='frontend/employeecontroller/view/$1';
 $route['employees/edit/(:any)']='frontend/employeecontroller/edit/$1';
 $route['employees/update/(:any)']='frontend/employeecontroller/update/$1';
-$route['employees/delete/(:any)']='frontend/employeecontroller/delete/$1';
+// $route['employees/delete/(:any)']='frontend/employeecontroller/delete/$1';
 
 // For confirm delete action
 $route['employees/confirmdelete/(:any)']['DELETE']='frontend/employeecontroller/delete/$1';

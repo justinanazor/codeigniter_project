@@ -49,8 +49,19 @@ class EmployeeController extends MY_Controller
 	{
 		$this->load->model('Employee_model');
 		$data['employee']=$this->Employee_model->edit_employee($id);
+		// if (empty($employee)) {
+		// 	show_404();
+		// }
 		$this->load->view('template/header');
 		$this->load->view('frontend/edit', $data);
+		$this->load->view('template/footer');
+	}
+	public function view($id)
+	{
+		$this->load->model('Employee_model');
+		$data['employee']=$this->Employee_model->view_employee($id);
+		$this->load->view('template/header');
+		$this->load->view('frontend/view', $data);
 		$this->load->view('template/footer');
 	}
 

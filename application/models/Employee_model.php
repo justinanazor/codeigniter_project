@@ -8,6 +8,11 @@ class Employee_model extends CI_Model {
     public function insert_employee($data){
         return $this->db->insert('employee',$data);
     }
+    public function view_employee($id)
+    {
+        $query = $this->db->get_where('employee', ['id' => $id]);
+        return $query -> row();
+    }
     public function edit_employee($id)
     {
         $query = $this->db->get_where('employee', ['id' => $id]);
